@@ -16,3 +16,7 @@ AvgPrice = g.Average(p => p.Price)
 Console.WriteLine("\n Статистика по категориям:");
 foreach (var c in byCategory)
 Console.WriteLine($"  {c.Category}: {c.Count} шт., средняя цена ≈ {c.AvgPrice:F0} Р");
+Console.WriteLine("\n Поиск товаров:");
+string query = "мони";
+var found = products.Where(p => p.Name.Contains(query, StringComparison.OrdinalIgnoreCase));
+Console.WriteLine($"По запросу \"{query}\": {string.Join(", ", found.Select(p => p.Name))}");
