@@ -20,3 +20,7 @@ Console.WriteLine("\n Поиск товаров:");
 string query = "мони";
 var found = products.Where(p => p.Name.Contains(query, StringComparison.OrdinalIgnoreCase));
 Console.WriteLine($"По запросу \"{query}\": {string.Join(", ", found.Select(p => p.Name))}");
+Console.WriteLine("\n Товары с низким остатком:");
+var lowStock = products.Where(p => p.Stock < 5).OrderBy(p => p.Stock);
+foreach (var p in lowStock)
+Console.WriteLine($"  {p.Name} — остаток {p.Stock} шт.");
