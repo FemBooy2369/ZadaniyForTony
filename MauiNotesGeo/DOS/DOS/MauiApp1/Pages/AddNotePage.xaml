@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.AddNotePage"
+             Title="Добавить заметку">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Entry x:Name="TitleEntry" Placeholder="Заголовок заметки" />
+            
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Камера" Clicked="OnCameraClicked" />
+                <Button Text="Галерея" Clicked="OnGalleryClicked" />
+            </HorizontalStackLayout>
+
+            <Button Text="Прикрепить геометку" Clicked="OnGeoClicked" />
+            <Label x:Name="LocationLabel" Text="Координаты не заданы" HorizontalOptions="Center" />
+
+            <Label Text="Предпросмотр:" HorizontalOptions="Start" />
+            <Image x:Name="PreviewImage" HeightRequest="300" Aspect="AspectFit" />
+
+            <Button Text="Сохранить" Clicked="OnSaveClicked" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
